@@ -36,14 +36,17 @@ with open(csvpath, newline="") as csvfile:
 names = tuple(votesCount.keys())
 votes = tuple(votesCount.values())
 
-# number of votes per candidate
 for x in votes:
     percentage.append((int(x)/rowcount)*100)
-    print (str(round(percentage(x),3)))
+
+# number of votes per candidate
+for x in range(len(names)):
+    print (str(names[x])+ ": "+ str(round(percentage[x],3)) +"% " + "(" + str(votes[x])+ ")")
 
 #percentage of votes per candidate
 
 print ("----------------------------")
 #find winner
-print ("Winner: " )
+winner = names[0]
+print ("Winner: " + str(winner) )
 print ("----------------------------")
